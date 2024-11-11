@@ -1,0 +1,28 @@
+---
+import Icon from './Icon.astro';
+
+const navLinks = [
+    { name: 'Entries', url: '#entries', icon: 'journal' },
+    { name: 'Categories', url: '#Categories', icon: 'category' },
+    { name: 'Articles', url: '#articles', icon: 'content' },
+    { name: 'Portfolio', url: '#portfolio', icon: 'portfolio' },
+    { name: 'Donate', url: '#donate', icon: 'donate' },
+];
+---
+
+<header class="bg-white shadow">
+    <div class="container mx-auto px-6 py3">
+        <h1 class="text-2xl font-bold">GeauxWeisbeck4</h1>
+        <nav class="mt-4">
+            <ul class="flex space-x-4">
+                {navLinks.map((link, index) => (
+                    <li class="flex items-center">
+                        <a href={link.url} class="text-gray-600 hover:text-gray-900">{link.name}</a>
+                        <Icon name={link.icon} class="w-4 h-4 ml-1 text-gray-400" />
+                        {index < navLinks.length - 1 && <span class="mx-2 text-gray-300">|</span>}
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    </div>
+</header>

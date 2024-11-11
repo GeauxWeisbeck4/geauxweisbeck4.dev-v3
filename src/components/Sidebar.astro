@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import codingatnight from "../assets/codingatnight.png";
+
+const navLinks = [
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' },
+    { name: 'Notes', url: '/notes' },
+    { name: 'Projects', url: '/projects' },
+    { name: 'Content', url: '/content' },
+    { name: 'Resources', url: '/resources' },
+    { name: 'Services', url: '/services' },
+    { name: 'Contact', url: '/contact' },
+];
+
+const websites = [
+    { name: 'Digital Garden', url: 'https://geauxweisbeck4.dev' },
+    { name: 'Andrew Weisbeck Resume', url: 'https://andrewweisbeck.com' },
+    { name: 'Tar Heel Dev Studio', url: 'https://tarheeldevstudio.com' },
+    { name: 'Geaux Code', url: 'https://geauxcode.hashnode.dev' },
+    { name: "Andrew's Medium Blog", url: 'https://medium.com/@geauxweisbeck4'},
+    { name: "Andrew's Dev.to Blog", url: 'https://dev.to/geauxweisbeck4' },
+];
+
+const socialMedia = [
+    { name: 'GitHub', url: 'https://github.com/geauxweisbeck4' },
+    { name: 'Twitter', url: 'https://twitter.com/geauxweisbeck4' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/geauxweisbeck4' },
+    { name: 'Instagram', url: 'https://www.instagram.com/geauxweisbeck4/' },
+    { name: 'Codepen', url: 'https://codepen.io/geauxweisbeck4/' },
+    { name: 'Mastodon', url: 'https://fosstodon.org/@geauxweisbeck4' },
+    { name: 'GitLab', url: 'https://gitlab.com/geauxweisbeck4' },
+    { name: 'Stack Overflow', url: 'https://stackoverflow.com/users/17772593/geauxweisbeck4' },
+    { name: 'Threads', url: 'https://www.threads.net/@geauxweisbeck4' },
+]
+---
+
+<aside class="w-64 h-screen bg-gray-100 p-6">
+    <div class="mb-6">
+        <Image src={codingatnight} alt="Coding at Night" class="w-32 h-32 rounded-full mx-auto" />
+        <h2 class="text-xl font-bold text-center mt-4">GeauxWeisbeck4</h2>
+    </div>
+
+    <nav class="mb-6">
+        <ul>
+            {navLinks.map((link) => (
+                <li class="mb-2">
+                    <a href={link.url} class="text-blue-600 hover:text-blue-800">{link.name}</a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+
+    <section class="mb-6">
+        <h3 class="font-bold mb-2">My Websites</h3>
+        <ul>
+            {websites.map((site) => (
+                <li class="mb-2">
+                    <a href={site.url} class="text-blue-600 hover:text-blue-800">{site.name}</a>
+                </li>
+            ))}
+        </ul>
+    </section>
+
+    <section>
+        <h3 class="font-bold mb-2">Social Media</h3>
+        <ul>
+            {socialMedia.map((platform) => (
+                <li class="mb-2">
+                    <a href={platform.url} class="text-blue-600 hover:text-blue-800">{platform.name}</a>
+                </li>
+            ))}
+        </ul>
+    </section>
+</aside>

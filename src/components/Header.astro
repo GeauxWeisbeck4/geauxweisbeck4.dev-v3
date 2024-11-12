@@ -1,10 +1,11 @@
 ---
 import Icon from './Icon.astro';
 
+
 const navLinks = [
     { name: 'Entries', url: '#entries', icon: 'journal' },
     { name: 'Categories', url: '#Categories', icon: 'category' },
-    { name: 'Articles', url: '#articles', icon: 'content' },
+    { name: 'Articles', url: '#articles', icon: 'articles' },
     { name: 'Portfolio', url: '#portfolio', icon: 'portfolio' },
     { name: 'Donate', url: '#donate', icon: 'donate' },
 ];
@@ -12,17 +13,49 @@ const navLinks = [
 
 <header class="bg-white shadow">
     <div class="container mx-auto px-6 py3">
-        <h1 class="text-2xl font-bold">GeauxWeisbeck4</h1>
-        <nav class="mt-4">
-            <ul class="flex space-x-4">
+        <div class="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-y-0">
+            <a href="/" class="group">
+                <h1 class="text-4xl my-4 font-bold bg-black text-teal-400 px-12 py-8 rounded-md hover:text-lime-400 hover:underline">Andrew's Digital Garden</h1>
+            </a>
+        </div>
+
+        <nav class="flex-grow pb-4">
+            <ul class="flex space-x-4 justify-center">
                 {navLinks.map((link, index) => (
                     <li class="flex items-center">
-                        <a href={link.url} class="text-gray-600 hover:text-gray-900">{link.name}</a>
+                        <a href={link.url} class="text-gray-600 hover:text-sky-700 hover:underline hover:underline-offset-1 text-xl font-semibold pr-1">{link.name}</a>
                         <Icon name={link.icon} class="w-4 h-4 ml-1 text-gray-400" />
                         {index < navLinks.length - 1 && <span class="mx-2 text-gray-300">|</span>}
                     </li>
                 ))}
             </ul>
         </nav>
+        <!-- Search Bar (Todo) -->
+        <!-- <form id="search-form" class="flex w-full max-w-sm items-center space-x-2">
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Search..."
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:bg-transparent file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              />
+              <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                <Icon name="articles.icon" class="w-4 h-4" />
+                <span class="sr-only">Search</span>
+              </button>
+        </form> -->
     </div>
 </header>
+
+<script>
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('search-input');
+
+    searchForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const query = searchInput?.ariaValueMax;
+        // search logic
+        console.log('Searching for:', query);
+        // Redirect to search results
+        // window.location.href = `/search?q=${encodeURIComponent(query)}`;
+    });
+</script>

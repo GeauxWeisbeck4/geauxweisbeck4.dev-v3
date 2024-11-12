@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/MainLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import codingatnight from '../assets/codingatnight.png';
 
@@ -15,7 +15,7 @@ const featuredProjects = [
 	{ title: "Andrew's Resume Site", url: '/projects/andrews-resume-site' },
 ];
 ---
-<MainLayout>
+<BaseLayout>
 	<section class="hero bg-gray-100 py-16">
 		<div class="container mx-auto px-6 flex items-center">
 			<div class="w-1/2">
@@ -27,7 +27,7 @@ const featuredProjects = [
 				</div>
 			</div>
 			<div class="w-1/2">
-				<Image src={codingatnight} class="w-64 h-64 rounded-full mx-auto" />
+				<Image src={codingatnight} class="w-64 h-64 rounded-full mx-auto" alt="Coding at Night" />
 			</div>
 		</div>
 	</section>
@@ -45,4 +45,39 @@ const featuredProjects = [
 			</div>
 		</div>
 	</section>
-</MainLayout>
+
+	<section class="featured-projects bg-gray-100 py-16">
+		<div class="container mx-auto px-6">
+			<h2 class="text-3xl font-bold mb-6">Featured Projects</h2>
+			<div class="grid grid-cols-3 gap-6">
+				{featuredProjects.map((project) => (
+					<a href={project.url} class="bg-white p-6 rounded shadow hover:shadow-lg transition-shadow">
+						<h3 class="text-xl font-semibold mb-2">{project.title}</h3>
+						<p class="text-blue-600">View project →</p>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="status-update py-16">
+		<div class="container mx-auto px-6">
+			<h2 class="text-3xl font-bold mb-6">Status Update</h2>
+			<p class="bg-white p-6 rounded shadow">
+				Currently working on this digital garden portfolio website - check in soon for v3.0 deploy!
+			</p>
+		</div>
+	</section>
+
+	<section class="newsletter bg-gray-100 py-16">
+		<div class="container mx-auto px-6">
+			<h2 class="text-3xl font-bold mb-6">Subscribe to My Newsletter</h2>
+			<form class="max-w-md mx-auto">
+				<div class="flex">
+					<input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-l" />
+					<button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-700">Subscribe</button>
+				</div>
+			</form>
+		</div>
+	</section>
+</BaseLayout>

@@ -1,54 +1,70 @@
-# Astro Starter Kit: Basics
+# GeauxWeisbeck4.dev - Andrew's Digital Garden
 
-```sh
-npm create astro@latest -- --template basics
-```
+[Visit Site Here](https://geauxweisbeck4.dev)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Purpose
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This is a personal site to showcase my projects and skills.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Tech Stack
 
-## 🚀 Project Structure
+- React
+- TypeScript
+- Tailwind CSS
+- Astro
+- Netlify
 
-Inside of your Astro project, you'll see the following folders and files:
+## Deployment
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+The site is deployed using Netlify.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Roadmap
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Add a blog section
+- Add a contact form
+- Add a project section
+- Add a skills section
+- Add a timeline section
+- Add a photo section
+- Add a resume section
+- Add a about section
+- Add a footer
+- Add a header
+- Add a navigation bar
+- Add a footer
 
-Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## License
 
-All commands are run from the root of the project, from a terminal:
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Acknowledgments
 
-## 👀 Want to learn more?
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Netlify](https://www.netlify.com/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [GitHub](https://github.com/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [Dev.to](https://dev.to/)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Author
+
+- [Andrew](https://github.com/geauxweisbeck4)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/geauxweisbeck4/)
+- [GitHub](https://github.com/geauxweisbeck4)
+- [Dev.to](https://dev.to/geauxweisbeck4)
+- [Twitter](https://twitter.com/geauxweisbeck4)
+- [Email](mailto: 13145533484@gmail.com)

@@ -1,0 +1,25 @@
+---
+const { events } = Astro.props;
+---
+
+<section class="mb-16">
+    <h2 class="text-3xl font-bold mb-8">My Journey</h2>
+    <div class="relative">
+        {events.map((event, index) => (
+            <div class={`mb-8 flex ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}>
+                <div class="hidden md:block w-1/2"></div>
+                <div class="w-full md:w-1/2 relative">
+                    <div class="border-2 rounded p-4 shadow-md">
+                        <h2 class="text-xl font-semibold mb-2">{event.title}</h2>
+                        <p class="mb-2">{event.description}</p>
+                        <p class="text-gray-500 mb-2">{event.date}</p>
+                        <a href={event.link} class="text-blue-500 hover:underline">Learn more</a>
+                    </div>
+                    <div class="absolute top-5 -left-3 md:-left-5 w-6 h-6 bg-blue-500 rounded-full"></div>
+
+                </div>
+            </div>
+        ))}
+        <div class="absolute h-full w-1 bg-blue-300 left-1/2 transform -translate-x-1/2 hidden md:block"></div>
+    </div>
+</section>

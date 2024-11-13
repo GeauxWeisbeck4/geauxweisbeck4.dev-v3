@@ -1,0 +1,19 @@
+---
+const { skills } = Astro.props;
+---
+
+<section class="mb-16">
+    <h2 class="text-3xl font-bold mb-8">Skills</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
+        {skills.map((skill) => (
+            <div class="flex flex-col items-center">
+                <a href={skill.link} class="text-lg font-semibold mb-2 hover:text-blue-500">{skill.name}</a>
+                <img src={`https://cdn.jsdelivr.net/gh/devicons/icons/${skill.name.toLowerCase()}/${skill.name.toLowerCase()}-original.svg`} alt={`${skill.name} logo`} class="w-16 h-16 mb-2" alt="Programming Skill Logo" />
+                <div class="w-full bg-gray-200 rounded-full h-2 5 dark:bg-gray-700">
+                    <div class="bg-blue-600 h-2 5 rounded-full" style={`width: ${skill.progress}%`}></div>
+                </div>
+                <span class="mt-1 text-sm text-gray-500">{skill.progress}%</span>
+            </div>
+        ))}
+    </div>
+</section>

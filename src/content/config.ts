@@ -4,7 +4,7 @@ import { z, defineCollection } from 'astro:content';
 import { glob, file } from 'astro/loaders';
 
 const entriesCollection = defineColection({
-    loader: glob({ pattern: "**\/*.md", base: "./"})
+    loader: glob({ pattern: "**\/*.md", base: "./data/journal"})
     type: "content",
     schema: z.object({
         entryDate: z.date(),

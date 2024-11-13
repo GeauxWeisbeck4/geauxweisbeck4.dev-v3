@@ -1,5 +1,132 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AboutHero from '../components/about/AboutHero.astro';
+import WorkExperience from "../components/about/WorkExperience.astro";
+import Timeline from '../components/about/Timeline.astro';
+import SkillsSection from '../components/about/SkillsSection.astro';
 
+const jobs = [
+  {
+    title: "Senior Full Stack Developer",
+    company: "Tech Innovators Inc.",
+    summary: "Led development of cutting-edge web applications",
+    dateWorked: "2020 - Present",
+    duties: [
+      "Architected and implemented scalable backend systems using Node.js and Express",
+      "Developed responsive front-end interfaces with React and Next.js",
+      "Mentored junior developers and conducted code reviews"
+    ]
+  },
+  {
+    title: "Full Stack Developer",
+    company: "Digital Solutions LLC",
+    summary: "Contributed to various client projects across different industries",
+    dateWorked: "2018 - 2020",
+    duties: [
+      "Built and maintained RESTful APIs using Python and Django",
+      "Created interactive data visualizations with D3.js",
+      "Implemented automated testing and continuous integration pipelines"
+    ]
+  },
+  {
+    title: "Junior Web Developer",
+    company: "StartUp Ventures",
+    summary: "Assisted in the development of the company's main product",
+    dateWorked: "2016 - 2018",
+    duties: [
+      "Developed and maintained WordPress themes and plugins",
+      "Optimized website performance and implemented SEO best practices",
+      "Collaborated with designers to implement pixel-perfect UIs"
+    ]
+  }
+];
+
+const timelineEvents = [
+  {
+    title: "Graduated from Code Bootcamp",
+    description: "Completed an intensive 12-week full stack web development program",
+    date: "2016",
+    link: "https://example.com/bootcamp"
+  },
+  {
+    title: "First Developer Job",
+    description: "Started as a Junior Web Developer at StartUp Ventures",
+    date: "2016",
+    link: "https://example.com/startup-ventures"
+  },
+  {
+    title: "Launched First Major Project",
+    description: "Successfully delivered a high-traffic e-commerce platform",
+    date: "2017",
+    link: "https://example.com/ecommerce-project"
+  },
+  {
+    title: "Promoted to Full Stack Developer",
+    description: "Joined Digital Solutions LLC and expanded my skill set",
+    date: "2018",
+    link: "https://example.com/digital-solutions"
+  },
+  {
+    title: "Spoke at Local Tech Conference",
+    description: "Gave a talk on 'Building Scalable Web Applications'",
+    date: "2019",
+    link: "https://example.com/tech-conference"
+  },
+  {
+    title: "Contributed to Open Source",
+    description: "Made significant contributions to a popular JavaScript library",
+    date: "2019",
+    link: "https://github.com/example/project"
+  },
+  {
+    title: "Joined Tech Innovators Inc.",
+    description: "Started a new role as Senior Full Stack Developer",
+    date: "2020",
+    link: "https://example.com/tech-innovators"
+  },
+  {
+    title: "Led Major System Overhaul",
+    description: "Successfully migrated legacy systems to a modern tech stack",
+    date: "2021",
+    link: "https://example.com/system-overhaul"
+  },
+  {
+    title: "Achieved AWS Certification",
+    description: "Became an AWS Certified Solutions Architect",
+    date: "2022",
+    link: "https://example.com/aws-certification"
+  },
+  {
+    title: "Launched Personal Tech Blog",
+    description: "Started sharing my knowledge and experiences in web development",
+    date: "2023",
+    link: "https://andrewblog.com"
+  }
+];
+
+const skills = [
+  { name: "JavaScript", progress: 90, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { name: "React", progress: 85, link: "https://reactjs.org/" },
+  { name: "Node.js", progress: 80, link: "https://nodejs.org/" },
+  { name: "Python", progress: 75, link: "https://www.python.org/" },
+  { name: "Django", progress: 70, link: "https://www.djangoproject.com/" },
+  { name: "SQL", progress: 85, link: "https://www.w3schools.com/sql/" },
+  { name: "HTML5", progress: 95, link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  { name: "CSS3", progress: 90, link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { name: "Git", progress: 85, link: "https://git-scm.com/" },
+  { name: "Docker", progress: 70, link: "https://www.docker.com/" },
+  { name: "AWS", progress: 65, link: "https://aws.amazon.com/" },
+  { name: "GraphQL", progress: 60, link: "https://graphql.org/" },
+  { name: "TypeScript", progress: 75, link: "https://www.typescriptlang.org/" },
+  { name: "MongoDB", progress: 70, link: "https://www.mongodb.com/" },
+  { name: "Redux", progress: 80, link: "https://redux.js.org/" }
+];
 ---
+<BaseLayout title="About Andrew">
+    <main class="container mx-auto px-4 py-8">
+        <AboutHero />
+        <WorkExperience jobs={jobs} />
+        <SkillsSection skills={skills} />
+        <Timeline events={timelineEvents} />
+    </main>
+</BaseLayout>

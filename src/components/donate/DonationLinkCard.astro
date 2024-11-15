@@ -1,0 +1,15 @@
+---
+const { name, logo, color, url } = Astro.props;
+---
+
+<a href={url} target="_blank" rel="noopener noreferrer" class="donation-link-card">
+    <div class="bg-white rounded-lg shadow-md p-4 transition duration-300 ease-in-out hover:shadow-lg flex items-center justify-center h-24">
+        <img src={logo} alt={`${name} logo`} class="h-12" />
+    </div>
+</a>
+
+<style define:vars={{ hoverColor: color }}>
+    .donation-link-card:hover div {
+        background-color: var(--hoverColor);
+    }
+</style>

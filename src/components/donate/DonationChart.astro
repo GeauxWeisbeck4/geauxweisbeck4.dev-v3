@@ -1,0 +1,61 @@
+---
+---
+<div class="chart-container">
+    <canvas id="donationChart"></canvas>
+</div>
+
+<script>
+    import Chart from 'chart.js/auto';
+
+    const ctx = document.getElementById('donationChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Software', 'Dev Tools', 'Hosting', 'Marketing', 'Open Source', 'Housing', 'Food'],
+            datasets: [{
+                label: 'Donation Allocation',
+                data: [300, 200, 150, 100, 250, 500, 400],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(0, 128, 0, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(0, 128, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Amount ($)'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+<style>
+    .chart-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+</style>

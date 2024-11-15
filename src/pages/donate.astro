@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import DonationChart from '../components/donate/DonationChart.astro';
+import DonationLinkCard from '../components/donate/DonationLinkCard.astro';
+import Newsletter from '../components/Newsletter.astro';
+
+const donationLinks = [
+    { name: 'Ko-Fi', logo: '/src/assets/logos/ko-fi.png', color: '#29abe0', url: 'https://ko-fi.com/geauxweisbeck4' },
+    { name: 'Patreon', logo: '/src/assets/logos/patreon.png', color: '#FF424D', url: 'https://www.patreon.com/c/GeauxWeisbeck4dev' },
+    { name: 'Buy Me a Coffee', logo: '/src/assets/logos/bmc-logo-yellow.png', color: '#FFDD00', url: 'https://www.buymeacoffee.com/geauxweisbeck4' },
+    { name: 'Open Collective', logo: '/src/assets/logos/opencollectivelogo.svg', color: '#7FADF2', url: 'https://opencollective.com/geauxweisbeck4' },
+    { name: 'CashApp', logo: '/src/assets/logos/cashapp.svg', color: '#00D632', url: 'https://cash.app/$geauxweisbeck' },
+    { name: 'Venmo', logo: '/src/assets/logos/venmo.png', color: '#3D95CE', url: 'https://venmo.com/lisaweisbeck4' },
+]
+---
+
+<BaseLayout title="Donate to Andrew Weisbeck">
+    <main class="container mx-auto px-4 py-8">
+        <section class="hero mb-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h1 class="text-4xl">Thank You For Your Donation</h1>
+                    <p class="text-lg">
+                        Seriously - you have no idea how much your donation means to me and my partner Lisa. Our struggle has only made us better and we can't do it without your kindness.
+                    </p>
+                </div>
+                <DonationChart />
+            </div>
+        </section>
+
+        <section class="donation-links mb-12">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {donationLinks.map((link) => (
+                    <DonationLinkCard name={link.name} logo={link.logo} color={link.color} url={link.url} />
+                ))}
+            </div>
+        </section>
+
+        <Newsletter />
+    </main>
+</BaseLayout>

@@ -1,5 +1,43 @@
 ---
+import type { Page } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import type { GetStaticPaths } from "astro";
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostPreview from '../../components/blog/BlogPostPreview.astro';
 
+interface Props {
+    page: Page<CollectionEntry<'posts'>>;
+}
+
+// TODO: Add this to separate `/util` directory in `post.ts` file or own pagination file`
+//NOTE: Great reference - 'https://github.com/onwidget/astrowind/blob/main/src/utils/blog.ts'
+export async function getStaticPaths({ paginate }) {
+    const allPosts = await getCollection('posts');
+    const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    return paginate(sortedPosts, { pageSize: 5 });
+};
+
+const { page } = Astro.props;
 ---
+<!--TODO: Style this page and add feature flags -->
+<BaseLayout title="Andrew's Dev Blog">
+    <h1 class="text-4xl font-bold mb-8">Blog Posts</h1>
+    <div class="space-y-8">
+        {page.data.map((post) => (
+            <BlogPostPreview post={post} />
+        ))}
+    </div>
+    <div class="mt-8 flex justify-between">
+        {page.url.prev ? (
+            <a href={page.url.prev} class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-500">
+                &larr; Previous Page
+            </a>
+        ) : <div></div>}
+        {page.url.next ? (
+            <a href={page.url.next} class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Next Page &rarr;
+            </a>
+        ): <div></div>}
+    </div>
+</BaseLayout>

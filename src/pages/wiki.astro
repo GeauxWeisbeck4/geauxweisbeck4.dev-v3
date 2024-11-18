@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryCard from '../components/wiki/CategoryCard.astro';
+
+const allNotes = await getCollection('notes');
+const categories = [...new Set(allNotes.map(note => note.data.category))];
+---
+
+<BaseLayout title="Andrew's Notes Wiki">
+    <h1 class="text-4xl font-bold mb-8">Andrew's Wiki Page</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categories.map((category) => (
+            <CategoryCard
+                category={category}
+                count={allNotes.filter(note => note.data.category === category).length}
+            />
+        ))}
+    </div>
+</BaseLayout>

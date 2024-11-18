@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NotePreview from '../../components/wiki/NotePreview.astro';
+
+export async function getStaticPaths() {
+    const allNotes = await getCollection('notes');
+    const uniqueCategories = [...new Set(allNotes.map(note => note.data.category))];
+
+    return uniqueCategories.map(category => {
+        const filteredNotes = allNotes.filter(note => note.data.category === category);
+        return {
+            params: { category },
+            props: { category, notes: filteredNotes },
+        };
+    });
+}
+
+const { category, notes } = Astro.props;
+---
+
+<BaseLayout title={`${category} - Wiki`}>
+    <h1 class="text-4xl font-bold">{category}</h1>
+    <p class="text-xl mb-8">Explore notes in the {category} category</p>
+
+    <div class="space-y-6">
+        {notes.map(note => <NotePreview note={note} />)}
+    </div>
+</BaseLayout>

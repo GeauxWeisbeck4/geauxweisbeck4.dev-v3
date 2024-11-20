@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/portfolio/ProjectCard.astro';
+import CategoryTabs from '../components/portfolio/CategoryTabs.astro';
+
+const allProjects = await getCollection('projects');
+const categories = ['All', 'JavaScript', 'Go Lang', 'Python', 'CLI', 'Hacking', 'Computer Science'];
+
+// Sort projects by start date (most recent first)
+allProjects.sort((a, b) => {
+    const dateA = a.data.startDate || new Date(0);
+    const dateB = b.data.startDate || new Date(0);
+    return dateB.getTime() - dateA.getTime();
+});
+---
+
+<BaseLayout title="Andrew's Portfolio">
+    <h1 class="text-4xl font-bold mb-8">Andrew's Portfolio</h1>
+
+    <CategoryTabs categories={categories} />
+
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        {allProjects.map(project => (
+            <ProjectCard project={project} />
+        ))}
+    </div>
+</BaseLayout>
+
+<script>
+    const tabs = document.querySelectorAll('[data-tab]');
+    const projectCards = document.querySelectorAll('[data-category]');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const category = tab.getAttribute('data-tab');
+
+            tabs.forEach(t => t.classList.remove('bg-blue-500', 'text-white'));
+            tab.classList.add('bg-blue-500', 'text-white');
+
+            projectCards.forEach(card => {
+                if (category === 'All' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+</script>

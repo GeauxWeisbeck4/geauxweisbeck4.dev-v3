@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import JournalEntryCard from '../../components/journal/JournalEntryCard.astro';
+import MonthFilter from '../../components/journal/MonthFilter.astro';
+
+export async function getStaticPaths({ paginate }) {
+    const allJournalEntries = await getCollection('journal');
+    const sortedEntries = allJournalEntries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    return paginate(sortedEntries, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<BaseLayout title="Andrew's Daily Journal">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-">Journal Entries</h1>
+        <div class="flex flex-col md:flex-row gap-">
+            <div class="md:w-3/4">
+                {page.data.map(entry => <JournalEntryCard entry={entry} />)}
+                <div class="mt-8 flex justiry-between">
+                    {page.url.prev ? <a href={page.url.prev} class="bg-blue-500 text-white px-4 py-2 rounded">Previous</a> : <div></div>}
+                    {page.url.next ? <a href={page.url.next} class="bg-blue-500 text-white px-4 py-2 rounded">Next</a> : <div></div>}
+                </div>
+            </div>
+            <div class="md:w-1/4">
+                <MonthFilter currentYear={currentYear} />
+            </div>
+        </div>
+    </div>
+</BaseLayout>
+
+<!-- Script for client side filtering -->
+<script>
+    const monthLinks = document.querySelectorAll('[data-month-filter]');
+    const journalEntries = document.querySelectorAll('[data-entry-date]');
+
+    monthLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedMonth = link.getAttribute('data-month-filter');
+
+            journalEntries.forEach(entry => {
+                const entryDate = new Date(entry.getAttribute('data-entry-date'));
+                if (selectedMonth === 'all' || entryDate.getMonth() === parseInt(selectedMonth) - 1) {
+                    entry.classList.remove('hidden');
+                } else {
+                    entry.classList.add('hidden');
+                }
+            });
+        });
+    });
+</script>

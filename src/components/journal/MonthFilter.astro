@@ -1,0 +1,26 @@
+---
+const { currentYear } = Astro.props;
+const months = [
+    'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+];
+---
+
+<div class="bg-white shadow-md rounded-lg p-6">
+    <h2 class="text-2xl font-bold mb-4">{currentYear}</h2>
+    <ul class="space-y-2">
+        <li>
+            <a href="#" data-month-filter="all" class="text-blue-600 hover:underline">All Entries</a>
+        </li>
+        {months.map((month, index) => (
+            <li>
+                <a
+                  href="#"
+                  data-month-filter={index + 1}
+                  class="text-blue-600 hover:underline"
+                  >
+                    {month}
+                  </a>
+            </li>
+        ))}
+    </ul>
+</div>

@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+    const journalEntries = await getCollection('journal');
+    return journalEntries.map(entry => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+interface EntryData {
+    tags: string[];
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title}>
+    <article class="container mx-auto px-4 py-8 max-w-3">
+        <h1 class="text-4xl font-bold mb-4">{entry.data.title}</h1>
+        <div class="text-gray-500 mb-4">{entry.data.date.toLocaleDateString()}</div>
+            <div class="flex flex-wrap gap-2 mb-6">
+            {entry.data.tags.map(tag => (
+                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">
+                    {tag}
+                </span>
+            ))}
+        </div>
+        <div class="prose max-w-none">
+            <Content />
+        </div>
+    </article>
+</BaseLayout>

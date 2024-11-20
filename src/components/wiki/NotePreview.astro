@@ -7,5 +7,5 @@ const { note } = Astro.props;
         <a href={`/wiki/note/${note.slug}`} class="hover:underline">{note.data.title}</a>
     </h2>
     <p class="text-gray-600 mb-2">{note.data.date.toLocaleDateString()}</p>
-    note.data.description && <p class="text-gray-700">{note.data.description}</p>
+    {note.data.description && <p class="text-gray-700">{note.data.description}</p>}
 </div>

@@ -10,7 +10,7 @@ const postsCollection = defineCollection({
     }),
 });
 
-const notesCollection = defineColection({
+const notesCollection = defineCollection({
     type: 'content',
     schema: z.object({
         title: z.string(),
@@ -28,7 +28,7 @@ const projectsCollection = defineCollection({
         dueDate: z.date().optional(),
         startDate: z.date().optional(),
         completeDate: z.date().optional(),
-        sprintNumber: reference('sprints'),
+        sprint: z.enum(['Sprint 7','Sprint 8', 'Sprint 9']),
         progress: z.number().min(0).max(100),
         tags: z.array(z.string()),
         coverImage: z.object({
@@ -41,22 +41,32 @@ const projectsCollection = defineCollection({
     }),
 });
 
-const sprintsCollection = defineCollection({
+const journalCollection = defineCollection({
     type: 'content',
     schema: z.object({
         title: z.string(),
-        sprintNumber: z.number().int().positive(),
-        startDate: z.date(),
-        endDate: z.date(),
-        tasksCompletionPercentage: z.number().min(0).max(100),
+        date: z.date(),
         tags: z.array(z.string()),
         description: z.string(),
     }),
-})
+});
+
+// const sprints = defineCollection({
+//     type: 'data',
+//     schema: z.object({
+//         title: z.string(),
+//         sprintNumber: z.number().int().positive(),
+//         startDate: z.string(),
+//         endDate: z.string(),
+//         tasksCompletionPercentage: z.number().min(0).max(100),
+//         tags: z.array(z.string()),
+//         description: z.string(),
+//     }),
+// })
 
 export const collections = {
     posts: postsCollection,
     notes: notesCollection,
     projects: projectsCollection,
-    sprints: sprintsCollection,
+    journal: journalCollection,
 };

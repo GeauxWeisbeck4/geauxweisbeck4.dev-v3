@@ -4,8 +4,7 @@ description: "Redesigning my freelance web development, marketing, and design bu
 dueDate: 2024-09-01
 startDate: 2024-10-04
 completeDate: 2024-10-11
-sprintNumber:
-  sprintNumber: 6
+sprint: Sprint 7
 progress: 85
 tags: ["Tar Heel Dev Studio", "Freelancing", "Astro", "TailwindCSS", "Marketing", "Design"]
 coverImage:

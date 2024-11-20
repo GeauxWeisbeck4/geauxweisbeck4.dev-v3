@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DailyToolsTable from "../components/resources/DailyToolsTable.astro";
+import ResourceCard from "../components/resources/ResourceCard.astro";
+import SectionCard from "../components/resources/SectionCard.astro";
+import { getCollection } from 'astro:content';
+
+const dailyTools = await getCollection('dailyTools');
+const resources = await getCollection('resources');
+---
+
+<BaseLayout title="Resources">
+</BaseLayout>

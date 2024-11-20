@@ -22,4 +22,8 @@ GeauxWeisbeck4.dev is my digital garden and personal website that I created usin
 
 ## Planning the Project
 
-This project really showcases my planning process for projects.
+This project really showcases my planning process for projects. I wanted to make a digital garden that I really liked to use and that I thought was a creative and fun way to showcase my skills, knowledge, and projects.
+
+I did some research on some of my favorite digital garden designs and found a few (especially one) that really spoke to me. Here are some of those examples:
+
+So I then next laid out my plan for completing the project using a few of my favorite productivity tools, Logseq, Notion, and Asana.

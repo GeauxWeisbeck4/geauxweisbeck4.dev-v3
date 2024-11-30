@@ -1,0 +1,10 @@
+[
+    {
+        "title": "Astrowind",
+        "demoUrl": "https://astrowind.vercel.app/",
+        "coverImage": "",
+        "description": "Astro + Tailwind CSS starter template",
+        "technologies": ["Astro.js", "Tailwind CSS", "Typescript"],
+        "projectUrl": "https://github.com/onwidget/astrowind/"
+    }
+]

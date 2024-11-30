@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles");
+const programmingArticles = articles.filter(article => article.data.category === 'Programming');
+const entrepreneurshipArticles = articles.filter(article => article.data.category === 'Entrepreneurship');
+const personalArticles = articles.filter(article => article.data.category ==='Personal')
+---
+
+<BaseLayout title="Content Resource">
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8">Content Resources</h1>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Programming</h2>
+            <ul class="space-y-4">
+                {programmingArticles.map(article => (
+                    <li>
+                        <a href={article.data.url} class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                            {article.data.title}
+                        </a>
+                        <p class="text-sm text-gray-600">{article.data.description}</p>
+                    </li>
+                ))}
+            </ul>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Entrepreneurship</h2>
+            <ul class="space-y-4">
+              {entrepreneurshipArticles.map(article => (
+                <li>
+                  <a href={article.data.url} class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                    {article.data.title}
+                  </a>
+                  <p class="text-sm text-gray-600">{article.data.description}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Personal</h2>
+            <ul class="space-y-4">
+              {personalArticles.map(article => (
+                <li>
+                  <a href={article.data.url} class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                    {article.data.title}
+                  </a>
+                  <p class="text-sm text-gray-600">{article.data.description}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+    </main>
+</BaseLayout>

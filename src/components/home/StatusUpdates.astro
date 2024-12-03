@@ -1,0 +1,25 @@
+---
+const statusUpdates = {
+    time: new Date().toLocaleTimeString(),
+    workingOn: "New Astro Project",
+    latestBlogPost: "Introduction to Astro",
+    listeningTo: "Lofi Beats",
+    location: "Panera in Durham, NC",
+    mood: "In Pain",
+    nextLiveBroadcast: "Friday, 3 PM EST"
+};
+---
+
+<section class="my-8 px-20">
+    <h2 class="text-2xl font-bold mb-4">Current Status</h2>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {Object.entries(statusUpdates).map(([key, value]) => (
+            <div class="border rounded-lg p-4">
+                <h3 class="text-lg font-semibold mb-2 capitalize">
+                    {key.replace(/([A-Z])/g, ' $1').trim()}
+                </h3>
+                <p>{value}</p>
+            </div>
+        ))}
+    </div>
+</section>

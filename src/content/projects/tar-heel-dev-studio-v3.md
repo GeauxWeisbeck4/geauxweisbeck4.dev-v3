@@ -13,6 +13,7 @@ coverImage:
 projectUrl: "https://tarheeldevstuido.com"
 gitUrl: "https://github.com/geauxweisbeck4/tar-heel-dev-studio-v3/"
 category: JavaScript
+featured: true
 ---
 
 # Tar Heel Dev Studio

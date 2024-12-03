@@ -13,6 +13,7 @@ coverImage:
 projectUrl: "https://geauxweisbeck4.dev"
 gitUrl: "https://github.com/geauxweisbeck4/geauxweisbeck4.dev-og/"
 category: JavaScript
+featured: true
 ---
 
 # GeauxWeisbeck4.dev

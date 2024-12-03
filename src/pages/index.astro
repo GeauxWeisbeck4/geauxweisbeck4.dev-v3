@@ -2,28 +2,20 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import codingatnight from '../assets/images/codingatnight.png';
-
-const featuredPosts = [
-	{ title: 'My First Blog Post', url: '/blog/first-post' },
-	{ title: 'My Second Blog Post', url: '/blog/second-post' },
-	{ title: 'My Third Blog Post', url: '/blog/third-post' },
-];
-
-const featuredProjects = [
-	{ title: 'Geauxweisbeck4.dev', url: '/projects/geauxweisbeck4.dev' },
-	{ title: 'Tar Heel Dev Studio', url: '/projects/tar-heel-dev-studio' },
-	{ title: "Andrew's Resume Site", url: '/projects/andrews-resume-site' },
-];
+import RecentBlogPosts from '../components/home/RecentBlogPosts.astro';
+import FeaturedProjects from '../components/home/FeaturedProjects.astro';
+import JournalEntries from '../components/home/JournalEntries.astro';
+import StatusUpdates from '../components/home/StatusUpdates.astro';
 ---
 <BaseLayout>
 	<section class="hero py-16 px-20">
 		<div class="container mx-auto px-6 flex items-center">
 			<div class="w-1/2">
-				<h1 class="text-4xl font-bold mb-4">Welcome to my Website!</h1>
-				<p class="mb-6">I'm a passionate web developer and content creator. I love building things and sharing my knowledge with others.</p>
+				<h1 class="text-4xl font-bold mb-4">Hey y'all, I'm Andrew!</h1>
+				<p class="mb-6">I'm a passionate web developer and content creator. I love building things and sharing my knowledge with others. Send me a message if you would like to hire me or work together!</p>
 				<div class="space-x-4">
-					<a href="/contact" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Contact Me</a>
-					<a href="/resume" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">View Resume</a>
+					<a href="/contact" class="bg-sky-500 text-white px-4 py-2 rounded hover:bg-sky-700">Contact Me</a>
+					<a href="/resume" class="bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-700">View Resume</a>
 				</div>
 			</div>
 			<div class="w-1/2">
@@ -32,44 +24,13 @@ const featuredProjects = [
 		</div>
 	</section>
 
-	<section class="featured-posts py-16">
-		<div class="container mx-auto px-6">
-			<h2 class="text-3xl font-bold mb-6">Feaured Blog Posts</h2>
-			<div class="grid grid-cols-4 gap-6">
-				{featuredPosts.map((post) => (
-					<a href={post.url} class="bg-white p-6 rounded shadow hover:shadow-lg transition-shadow">
-						<h3 class="text-xl font-semibold mb-2">{post.title}</h3>
-						<p class="text-blue-600">Read more →</p>
-					</a>
-				))}
-			</div>
-		</div>
-	</section>
 
-	<section class="featured-projects bg-gray-100 py-16">
-		<div class="container mx-auto px-6">
-			<h2 class="text-3xl font-bold mb-6">Featured Projects</h2>
-			<div class="grid grid-cols-3 gap-6">
-				{featuredProjects.map((project) => (
-					<a href={project.url} class="bg-white p-6 rounded shadow hover:shadow-lg transition-shadow">
-						<h3 class="text-xl font-semibold mb-2">{project.title}</h3>
-						<p class="text-blue-600">View project →</p>
-					</a>
-				))}
-			</div>
-		</div>
-	</section>
+	<RecentBlogPosts />
+	<FeaturedProjects />
+	<JournalEntries />
+	<StatusUpdates />
 
-	<section class="status-update py-16">
-		<div class="container mx-auto px-6">
-			<h2 class="text-3xl font-bold mb-6">Status Update</h2>
-			<p class="bg-white p-6 rounded shadow">
-				Currently working on this digital garden portfolio website - check in soon for v3.0 deploy!
-			</p>
-		</div>
-	</section>
-
-	<section class="newsletter bg-gray-100 py-16">
+	<section class="newsletter py-16 px-20">
 		<div class="container mx-auto px-6">
 			<h2 class="text-3xl font-bold mb-6">Subscribe to My Newsletter</h2>
 			<form class="max-w-md mx-auto">

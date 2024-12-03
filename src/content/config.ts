@@ -38,6 +38,7 @@ const projectsCollection = defineCollection({
         projectUrl: z.string().url().optional(),
         gitUrl: z.string().url(),
         category: z.enum(['JavaScript', 'Go Lang', 'Python', 'CLI', 'Hacking', 'Computer Science']),
+        featured: z.boolean().default(false),
     }),
 });
 

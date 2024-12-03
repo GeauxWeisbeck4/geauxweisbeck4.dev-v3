@@ -64,67 +64,11 @@ const journalCollection = defineCollection({
 //     }),
 // })
 
-const dailyToolsCollection = defineCollection({
-    type: 'data',
-    schema: z.object({
-        title: z.string(),
-        link: z.string().url(),
-        description: z.string(),
-        category: z.string(),
-    }),
-});
 
-const resourcesCollection = defineCollection({
-    type: 'data',
-    schema: z.object({
-        title: z.string(),
-        url: z.string().url(),
-        description: z.string(),
-        tags: z.array(z.string()),
-        projectPage: z.string().url(),
-    }),
-});
-
-const articlesCollection = defineCollection({
-    type: 'data',
-    schema: z.object({
-        title: z.string(),
-        url: z.string().url(),
-        description: z.string(),
-        category: z.enum(['Programming', 'Entrepreneurship', 'Personal']),
-    }),
-});
-
-const startersCollection = defineCollection({
-    type: 'data',
-    schema: z.object({
-        title: z.string(),
-        demoUrl: z.string().url(),
-        coverImage: z.string(),
-        description: z.string(),
-        technologies: z.array(z.string()),
-        projectUrl: z.string().url(),
-    }),
-});
-
-const openSourceCollection = defineCollection({
-    type: 'data',
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        tags: z.array(z.string()),
-        repositoryUrl: z.string().url(),
-    }),
-});
 
 export const collections = {
     posts: postsCollection,
     notes: notesCollection,
     projects: projectsCollection,
     journal: journalCollection,
-    dailyTools: dailyToolsCollection,
-    resources: resourcesCollection,
-    articles: articlesCollection,
-    starters: startersCollection,
-    openSource: openSourceCollection,
 };

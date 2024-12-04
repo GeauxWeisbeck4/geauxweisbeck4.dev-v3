@@ -8,17 +8,21 @@ const recentEntries = allEntries
 ---
 
 <section class="my-8 px-20">
-    <h2 class="text-2xl font-bold mb-4">Recent Journal Entries</h2>
-    <ul class="space-y-4">
+    <h2 class="text-2xl font-bold mb-4 text-center">Recent Journal Entries</h2>
+    <div class="flex justify-left w-full">
+    <ul class="space-y-4 w-3/4">
         {recentEntries.map((entry) => (
-            <li class="border-b pb-2">
-                <h3 class="text-lg font-semibold">
-                    <a href={`/journal/${entry.slug}`} class="text-blue-600 hover:underline">
-                        {entry.data.title}
-                    </a>
-                </h3>
-                <p class="text-gray-600 text-sm">{entry.data.date.toLocaleDateString()}</p>
-            </li>
+            <a href={`/journal/${entry.slug}`}>
+                <div class="pb-2 text-left list-disc mt-4">
+                    <h3 class="text-lg font-semibold text-blue-600">
+                            {entry.data.title}
+                    </h3>
+                    <p class="text-gray-600 text-sm">{entry.data.date.toLocaleDateString()}</p>
+                    </div>
+                    <p class="text-gray-700 text-sm">{entry.data.description}</p>
+                </li>
+            </a>
         ))}
     </ul>
+    </div>
 </section>

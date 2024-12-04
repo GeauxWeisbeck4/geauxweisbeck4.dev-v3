@@ -5,7 +5,6 @@ import codingatnight from '../assets/images/codingatnight.png';
 import RecentBlogPosts from '../components/home/RecentBlogPosts.astro';
 import FeaturedProjects from '../components/home/FeaturedProjects.astro';
 import JournalEntries from '../components/home/JournalEntries.astro';
-import StatusUpdates from '../components/home/StatusUpdates.astro';
 ---
 <BaseLayout>
 	<section class="hero py-16 px-20">
@@ -28,14 +27,15 @@ import StatusUpdates from '../components/home/StatusUpdates.astro';
 	<RecentBlogPosts />
 	<FeaturedProjects />
 	<JournalEntries />
-	<StatusUpdates />
+
 
 	<section class="newsletter py-16 px-20">
 		<div class="container mx-auto px-6">
-			<h2 class="text-3xl font-bold mb-6">Subscribe to My Newsletter</h2>
+			<h2 class="text-3xl font-bold mb-4 text-center">Subscribe to My Newsletter</h2>
+			<p class="text-lg text-slate-500 mb-4 text-center">Stay up to date with my latest work, deals, and product updates!</p>
 			<form class="max-w-md mx-auto">
 				<div class="flex">
-					<input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-l" />
+					<input type="email" placeholder="Enter your email" class="border-2 border-slate-300 flex-1 px-4 py-2 rounded-l mr-8" />
 					<button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-700">Subscribe</button>
 				</div>
 			</form>

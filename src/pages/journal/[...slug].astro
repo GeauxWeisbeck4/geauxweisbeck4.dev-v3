@@ -19,7 +19,7 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title}>
-    <article class="container mx-auto px-4 py-8 max-w-3">
+    <article class="container mx-auto px-4 py-8">
         <h1 class="text-4xl font-bold mb-4">{entry.data.title}</h1>
         <div class="text-gray-500 mb-4">{entry.data.date.toLocaleDateString()}</div>
             <div class="flex flex-wrap gap-2 mb-6">

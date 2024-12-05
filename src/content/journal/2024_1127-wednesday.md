@@ -1,6 +1,6 @@
 ---
-title: "Tuesday"
-date: 2024-11-26
+title: "Wednesday"
+date: 2024-11-27
 description: "Started the day off extremely bright and early. Gonna be a good day"
 tags: ['Journal', 'Linux', 'Digital Garden']
 ---

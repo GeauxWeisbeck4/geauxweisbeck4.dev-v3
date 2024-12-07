@@ -2,21 +2,21 @@
 const { jobs } = Astro.props;
 ---
 
-<section class="mb-16">
+<section class="mb-16 px-12">
     <h2 class="text-3xl font-bold mb-8">Work Experience</h2>
     {jobs.map((job) => (
         <div class="mb-8 border-b pb-8">
             <div class="flex justify-between items-start mb-4">
                 <div>
                     <h3 class="text-2xl font-semibold">{job.title}</h3>
-                    <h4 class="text-xl text-gray-600">{job.company}</h4>
+                    <h4 class="text-xl text-sky-600 font-semibold">{job.company}</h4>
                     <p class="text-lg mt-2">{job.summary}</p>
                 </div>
-                <span class="text-gray-500">{job.dateWorked}</span>
+                <span class="text-teal-500 font-semibold">{job.dateWorked}</span>
             </div>
             <ul class="list-disc pl-5">
                 {job.duties.map((duty) => (
-                    <li class="text-lg mb-2">{duty}</li>
+                    <li class="text-md mb-2">{duty}</li>
                 ))}
             </ul>
         </div>

@@ -5,7 +5,7 @@ const allProjects = await getCollection('projects');
 const featuredProjects = allProjects.filter(project => project.data.featured);
 ---
 
-<section class="my-8 px-20">
+<section class="my-8 px-12">
     <h2 class="text-2xl font-bold mb-4 text-center">Featured Projects</h2>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {featuredProjects.map((project) => (

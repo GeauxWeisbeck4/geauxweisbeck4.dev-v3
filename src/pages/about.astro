@@ -108,21 +108,21 @@ const timelineEvents = [
 ];
 
 const skills = [
-  { name: "JavaScript", progress: 90, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-  { name: "React", progress: 85, link: "https://reactjs.org/" },
-  { name: "Node.js", progress: 80, link: "https://nodejs.org/" },
-  { name: "Python", progress: 75, link: "https://www.python.org/" },
-  { name: "Django", progress: 70, link: "https://www.djangoproject.com/" },
-  { name: "SQL", progress: 85, link: "https://www.w3schools.com/sql/" },
-  { name: "HTML5", progress: 95, link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-  { name: "CSS3", progress: 90, link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-  { name: "Git", progress: 85, link: "https://git-scm.com/" },
-  { name: "Docker", progress: 70, link: "https://www.docker.com/" },
-  { name: "AWS", progress: 65, link: "https://aws.amazon.com/" },
-  { name: "GraphQL", progress: 60, link: "https://graphql.org/" },
-  { name: "TypeScript", progress: 75, link: "https://www.typescriptlang.org/" },
-  { name: "MongoDB", progress: 70, link: "https://www.mongodb.com/" },
-  { name: "Redux", progress: 80, link: "https://redux.js.org/" }
+  { name: "JavaScript", progress: 90, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", icon: "JavaScript" },
+  { name: "React", progress: 85, link: "https://reactjs.org/", icon: "reactjs" },
+  { name: "Node.js", progress: 90, link: "https://nodejs.org/", icon: "nodejs" },
+  { name: "Python", progress: 95, link: "https://www.python.org/", icon: "Python" },
+  { name: "Django", progress: 85, link: "https://www.djangoproject.com/", icon: "Django" },
+  { name: "PostgreSQL", progress: 80, link: "https://postgresql.org", icon: "PostgreSQL" },
+  { name: "HTML5", progress: 100, link: "https://developer.mozilla.org/en-US/docs/Web/HTML", icon: "HTML5" },
+  { name: "CSS3", progress: 97, link: "https://developer.mozilla.org/en-US/docs/Web/CSS", icon: "CSS3" },
+  { name: "Git", progress: 95, link: "https://git-scm.com/", icon: "Git" },
+  { name: "Docker", progress: 85, link: "https://www.docker.com/", icon: "docker" },
+  { name: "AWS", progress: 65, link: "https://aws.amazon.com/", icon: "aws" },
+  { name: "GraphQL", progress: 60, link: "https://graphql.org/", icon: "graphql" },
+  { name: "TypeScript", progress: 75, link: "https://www.typescriptlang.org/", icon: "TypeScript" },
+  { name: "MongoDB", progress: 85, link: "https://www.mongodb.com/", icon: "MongoDB" },
+  { name: "Redux", progress: 70, link: "https://redux.js.org/", icon: "redux" }
 ];
 ---
 <BaseLayout title="About Andrew">
@@ -131,5 +131,18 @@ const skills = [
         <WorkExperience jobs={jobs} />
         <SkillsSection skills={skills} />
         <Timeline events={timelineEvents} />
+
+        <section class="newsletter py-16 px-12">
+          <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4 text-center">Subscribe to My Newsletter</h2>
+            <p class="text-lg text-slate-500 mb-4 text-center">Stay up to date with my latest work, deals, and product updates!</p>
+            <form class="max-w-md mx-auto">
+              <div class="flex">
+                <input type="email" placeholder="Enter your email" class="border-2 border-slate-300 flex-1 px-4 py-2 rounded-l mr-8" />
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-700">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </section>
     </main>
 </BaseLayout>

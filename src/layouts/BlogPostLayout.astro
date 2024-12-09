@@ -1,17 +1,29 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import type { MarkdownLayoutProps } from "astro";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  date: Date;
+  file: string;
+  url: string;
+  headings: any;
+  rawContent: any;
+  compiledContent: any;
+  frontmatter: any;
+}>
 
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-    <article class="max-w-3xl mx-">
+    <section class="max-w-3xl mx-10">
         <h1 class="text-4xl font-bold mb-4">{frontmatter.title}</h1>
-        <p class="text-gray-600 mb-4">
-            {frontmatter.date.toLocaleDateString()} | {frontmatter.author}
+        <p class="text-teal-500 font-bold mb-4">
+            {frontmatter.date.toLocaleDateString()}
         </p>
-        <div class="prose max-w-none">
+        <div class="prose max-w-none pr-20">
             <slot />
         </div>
-    </article>
+    </section>
 </BaseLayout>

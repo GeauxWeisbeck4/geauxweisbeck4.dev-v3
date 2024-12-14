@@ -2,13 +2,27 @@
 const { post } = Astro.props;
 ---
 
-<article class="border-b pb-6">
-    <h2 class="text-2xl font-semibold mb-2">
-        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-    </h2>
-    <p class="text-gray-600 mb-2">
-        {post.data.date.toLocaleDateString()} | {post.data.author}
-    </p>
-    <p>{post.data.description}</p>
-    <a href={`/blog/${post.slug}`} class="text-blue-500 hover:underline">Read More</a>
+<article class="border-b mb-6 max-w-3xl border-black border-2 rounded-lg shadow-md hover:shadow-lg p-4">
+    <div class="flex justify-between items-start mb-4">
+        <h2 class="text-2xl hover:text-sky-950 hover:underline font-semibold">
+            <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+        </h2>
+        <p class="text-teal-500 font-bold text-xl">
+            {post.data.date.toLocaleDateString()}
+        </p>
+    </div>
+
+
+    <div class="flex flex-wrap gap-4 mb-8">
+        {post.data.tags.map(tag => (
+            <span class="font-bold bg-sky-400 text-slate-100 hover:bg-sky-300 hover:shadow-lg rounded-lg hover:text-black px-2 py-1 rouned text-sm shadow-md">
+                {tag}
+            </span>
+        ))}
+    </div>
+    <div class="flex justify-between items-start mb-2">
+        <p class="pb-4 max-w-lg">{post.data.description}</p>
+    <a href={`/blog/${post.slug}`} class="mt-4 border-4 text-xl border-black rounded-full px-4 py-1 bg-rose-500 hover:bg-teal-500 text-white font-semibold">Read More</a>
+    </div>
+
 </article>

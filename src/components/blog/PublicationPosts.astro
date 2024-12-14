@@ -1,0 +1,20 @@
+---
+const { publications } = Astro.props
+
+---
+
+<div class="bg-white shadow-md hover:shadow-lg rounded-lg border-black border-2 p-6">
+    <h2 class="text-2xl font-bold mb-4">Other Publications</h2>
+    <ul class="space-y-2">
+        {publications.map((publication) => (
+            <li>
+                <a
+                  href={publication.link}
+                  class="text-lg font-bold text-black hover:text-sky-500 hover:underline"
+                >
+                    {publication.title}
+                </a>
+            </li>
+        ))}
+    </ul>
+</div>

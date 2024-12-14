@@ -17,7 +17,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-    <section class="max-w-3xl mx-10">
+    <section class="max-w-4xl mx-20 my-10 pl-20">
         <h1 class="text-4xl font-bold mb-4">{frontmatter.title}</h1>
         <p class="text-teal-500 font-bold mb-4">
             {frontmatter.date.toLocaleDateString()}

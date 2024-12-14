@@ -1,8 +1,8 @@
 ---
 title: "Creating Components for GeauxWeisbeck4.dev"
-author: "Andrew Weisbeck"
 date: 2024-12-02
-description: "I discuss how I created the components that make up this website."
+description: "I discuss how I created the components that makeS up this website."
+tags: ["Digital Garden", "Geaux Code", "Docs"]
 ---
 
 ## Home Page Components

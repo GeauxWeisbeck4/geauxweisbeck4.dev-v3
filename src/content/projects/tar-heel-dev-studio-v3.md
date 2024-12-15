@@ -18,4 +18,16 @@ featured: true
 
 # Tar Heel Dev Studio
 
-This is the third version of [Tar Heel Dev Studio's website](https://tarheeldevstuido.com).
+This is the third version of [Tar Heel Dev Studio's website](https://tarheeldevstudio.com). It was important for me to make sure the site accurately reflected my values, current skills, and most up to date experience.
+
+This site was more carefully designed and developed, because I'm a better developer, but also because I have wanted to put more time and effort into focusing on this brand, rather than just doing freelancing under a personal or no brand.
+
+## Tech Stack
+
+- [Astro.js](https://astro.build)
+- [Tailwind CSS](https://tailwindcss.com)
+- TypeScript/JavaScript
+- HTML & CSS
+
+## Astro Integrations Used
+

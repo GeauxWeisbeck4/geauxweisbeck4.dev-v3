@@ -8,18 +8,22 @@ sprint: Sprint 8
 progress: 100
 tags: ["Resume", "Astro", "TailwindCSS"]
 coverImage:
-  src: "https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1731903416/geauxweisbeck4dev-temporary_kjbdlh.png"
+  src: "https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1734254270/andrewweisbeck-cover_dwhzud.png"
   alt: "Temporary Website for GeauxWeisbeck4.dev"
-projectUrl: "https://geauxweisbeck4.dev"
+projectUrl: "https://andrewweisbeck.com"
 gitUrl: "https://github.com/geauxweisbeck4/geauxweisbeck4.dev-og/"
 category: JavaScript
 featured: true
 ---
 
-# AndrewWeisbeck.com
+# Andrew Weisbeck's Resume Website
 
 This project is my personal resume in the version of a website that I created with Astro.
 
 ## Planning the Project
 
 I decided that I wanted an alternate resume that would showcase my developer skills alongside my experience and skill set.
+
+## Resume Site
+
+![AndrewWeisbeck.com Full Screenshot](https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1734253583/Screenshot_6-12-2024_191645_andrewweisbeck.com_lmkrlu.jpg)

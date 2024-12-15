@@ -4,6 +4,7 @@ description: "A CLI App I built using Node.js that allows you to create a todo l
 dueDate: 2024-04-12
 startDate: 2024-04-11
 completeDate: 2024-04-12
+sprint: Sprint 7
 progress: 100
 tags: ["Node.js", "CLI", "GitHub"]
 coverImage:

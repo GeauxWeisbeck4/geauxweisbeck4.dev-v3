@@ -13,7 +13,7 @@ interface Props {
 
 // TODO: Add this to separate `/util` directory in `post.ts` file or own pagination file`
 //NOTE: Great reference - 'https://github.com/onwidget/astrowind/blob/main/src/utils/blog.ts'
-export async function GetStaticPaths({ paginate }: { paginate: PaginateFunction }) {
+export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
     const allPosts = await getCollection('posts');
     const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
     return paginate(sortedPosts, { pageSize: 5 });

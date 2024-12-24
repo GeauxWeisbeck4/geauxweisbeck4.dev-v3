@@ -3,7 +3,6 @@ title: "HuskerJS.dev"
 description: "HuskerJS.dev is a college sports community for developers and computer scientists to meet and talk about sports and work on open source projects."
 dueDate: 2025-06-01
 startDate: 2022-08-11
-sprint: Sprint 9
 progress: 30
 tags: ["HuskerJS.dev", "Project", "College Football", "Astro"]
 coverImage:

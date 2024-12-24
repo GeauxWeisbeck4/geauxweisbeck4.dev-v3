@@ -1,6 +1,8 @@
 # GeauxWeisbeck4.dev - Andrew's Digital Garden
 
-[Visit Site Here](https://geauxweisbeck4.dev)
+Welcome to my personal website and digital garden, [GeauxWesibeck4.dev](https://geauxweisbeck4.dev). This is version 3.0 of my personal website and it is also serving as my first official digital garden - I've had "digital gardens" in the past that didn't really follow the expectation of working in public. 
+
+
 
 ## Purpose
 
@@ -13,26 +15,6 @@ This is a personal site to showcase my projects and skills.
 - Tailwind CSS
 - Astro
 - Netlify
-
-## Deployment
-
-The site is deployed using Netlify.
-
-## Roadmap
-
-- Add a blog section
-- Add a contact form
-- Add a project section
-- Add a skills section
-- Add a timeline section
-- Add a photo section
-- Add a resume section
-- Add a about section
-- Add a footer
-- Add a header
-- Add a navigation bar
-- Add a footer
-
 
 ## License
 

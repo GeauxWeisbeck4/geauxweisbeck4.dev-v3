@@ -1,7 +1,6 @@
 ---
 import Icon from './Icon.astro';
 
-
 const navLinks = [
     { name: 'Entries', url: '/journal', icon: 'journal' },
     { name: 'Categories', url: '/categories', icon: 'category' },
@@ -12,6 +11,8 @@ const navLinks = [
 ---
 
 <header class="bg-white shadow">
+
+
     <div class="container mx-auto px-6 py3">
         <div class="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-y-0">
             <a href="/" class="group">
@@ -24,7 +25,7 @@ const navLinks = [
                 {navLinks.map((link, index) => (
                     <li class="flex items-center">
                         <a href={link.url} class="text-gray-600 hover:text-sky-700 hover:underline hover:underline-offset-1 text-xl font-semibold pr-1">{link.name}</a>
-                        <Icon name={link.icon} class="w-4 h-4 ml-1 text-gray-400" />
+                        <Icon name={link.icon} />
                         {index < navLinks.length - 1 && <span class="mx-2 text-gray-300">|</span>}
                     </li>
                 ))}

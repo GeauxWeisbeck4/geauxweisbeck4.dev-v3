@@ -5,7 +5,7 @@ const { events } = Astro.props;
 <section class="mb-16">
     <h2 class="text-3xl font-bold mb-8">My Journey</h2>
     <div class="relative">
-        {events.map((event, index) => (
+        {events.map((event: any, index: number) => (
             <div class={`mb-8 flex ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}>
                 <div class="hidden md:block w-1/2"></div>
                 <div class="w-full md:w-1/2 relative">

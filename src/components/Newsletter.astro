@@ -19,9 +19,10 @@
 
 <script>
     const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
+    form?.addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = form.querySelector('input[type="email"]').value;
+        const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
+        const email = emailInput?.value;
         console.log(`Subscribing email: ${email}`);
         alert('Thank you for subscribing!');
         form.reset();

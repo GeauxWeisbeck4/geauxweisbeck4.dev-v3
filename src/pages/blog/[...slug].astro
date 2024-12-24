@@ -10,13 +10,10 @@ export async function getStaticPaths() {
     }));
 }
 
-interface EntryData {
-    tags: string[];
-}
-
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
+
 <BlogPostLayout frontmatter={entry.data}>
     <div class="flex flex-wrap gap-2 mt-2">
         {entry.data.tags.map(tag => (

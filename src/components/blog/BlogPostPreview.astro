@@ -14,7 +14,7 @@ const { post } = Astro.props;
 
 
     <div class="flex flex-wrap gap-4 mb-8">
-        {post.data.tags.map(tag => (
+        {post.data.tags.map((tag: string) => (
             <span class="font-bold bg-sky-400 text-slate-100 hover:bg-sky-300 hover:shadow-lg rounded-lg hover:text-black px-2 py-1 rouned text-sm shadow-md">
                 {tag}
             </span>

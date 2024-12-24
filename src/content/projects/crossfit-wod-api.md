@@ -4,7 +4,6 @@ description: "An API I built that allows you to track a bunch of crossfit workou
 dueDate: 2024-03-11
 startDate: 2024-03-11
 completeDate: 2024-03-11
-sprint: Sprint 8
 progress: 90
 tags: ["Node.js", "API", "GitHub"]
 coverImage:

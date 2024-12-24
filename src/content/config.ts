@@ -28,7 +28,6 @@ const projectsCollection = defineCollection({
         dueDate: z.date().optional(),
         startDate: z.date().optional(),
         completeDate: z.date().optional(),
-        sprint: z.enum(['Sprint 7','Sprint 8', 'Sprint 9']),
         progress: z.number().min(0).max(100),
         tags: z.array(z.string()),
         coverImage: z.object({

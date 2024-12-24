@@ -1,12 +1,20 @@
 ---
 import { Icon } from 'astro-icon/components';
+
+interface Skill {
+    name: string;
+    link: string;
+    icon: string;
+    progress: number;
+}
+
 const { skills } = Astro.props;
 ---
 
 <section class="mb-16 px-12">
     <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
-        {skills.map((skill) => (
+        {skills.map((skill: Skill) => (
             <div class="flex flex-col items-center">
                 <a href={skill.link} class="text-lg font-semibold mb-2 hover:text-blue-500">{skill.name}</a>
                 <Icon size={48} name={skill.icon} />

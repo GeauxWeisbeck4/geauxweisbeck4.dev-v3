@@ -4,7 +4,6 @@ description: "My digital garden, deployed version 3 of my personal site."
 dueDate: 2024-11-17
 startDate: 2024-11-04
 completeDate: 2024-11-17
-sprint: Sprint 8
 progress: 100
 tags: ["Digital Garden", "Geaux Code", "Astro", "TailwindCSS"]
 coverImage:

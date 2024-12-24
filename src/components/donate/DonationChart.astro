@@ -7,9 +7,9 @@
 <script>
     import Chart from 'chart.js/auto';
 
-    const ctx = document.getElementById('donationChart');
+    const ctx = document.getElementById('donationChart')! as HTMLCanvasElement;
 
-    new Chart(ctx, {
+    new Chart(ctx,{
         type: 'bar',
         data: {
             labels: ['Software', 'Dev Tools', 'Hosting', 'Marketing', 'Open Source', 'Housing', 'Food'],

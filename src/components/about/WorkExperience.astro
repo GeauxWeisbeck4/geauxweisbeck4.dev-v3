@@ -1,10 +1,17 @@
 ---
+interface Job {
+    title: string;
+    company: string;
+    summary: string;
+    dateWorked: string;
+    duties: string[];
+}
 const { jobs } = Astro.props;
 ---
 
 <section class="mb-16 px-12">
     <h2 class="text-3xl font-bold mb-8">Work Experience</h2>
-    {jobs.map((job) => (
+    {jobs.map((job: Job) => (
         <div class="mb-8 border-b pb-8">
             <div class="flex justify-between items-start mb-4">
                 <div>

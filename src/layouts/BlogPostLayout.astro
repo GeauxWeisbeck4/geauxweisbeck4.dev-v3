@@ -2,16 +2,16 @@
 import BaseLayout from "./BaseLayout.astro";
 import type { MarkdownLayoutProps } from "astro";
 
-type Props = MarkdownLayoutProps<{
-  title: string;
-  date: Date;
-  file: string;
-  url: string;
-  headings: any;
-  rawContent: any;
-  compiledContent: any;
-  frontmatter: any;
-}>
+type Props = {
+    frontmatter: {
+        title: string;
+        date: Date;
+        tags: string[];
+        description: string;
+        file?: string;
+        url?: string;
+    };
+};
 
 const { frontmatter } = Astro.props;
 ---

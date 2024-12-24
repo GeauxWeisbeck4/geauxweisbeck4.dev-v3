@@ -32,7 +32,6 @@ const { Content } = await project.render();
             {project.data.startDate && <p><strong>Start Date:</strong> {project.data.startDate.toLocaleDateString()}</p>}
             {project.data.dueDate && <p><strong>Due Date:</strong> {project.data.dueDate.toLocaleDateString()}</p>}
             {project.data.completeDate && <p><strong>Completion Date:</strong> {project.data.completeDate.toLocaleDateString()}</p>}
-            <p><strong>Sprint Number:</strong> {project.data.sprintNumber}</p>
             {project.data.projectUrl && <p><strong>Project URL:</strong> <a href={project.data.projectUrl} class="text-blue-500 hover:underline">{project.data.projectUrl}</a></p>}
             <p><strong>Git URL:</strong> <a href={project.data.gitUrl} class="text-blue-500 hover:underline">{project.data.gitUrl}</a></p>
         </div>

@@ -2,7 +2,7 @@
 title: "GeauxWeisbeck4.dev is Now Live"
 date: 2024-12-15
 description: "I should have had this done weeks ago, but oh well."
-tags: ["Digital Garden", "Geaux Code", "GeauxWeisbeck4.dev"]
+tags: ["Digital Garden", "Changelog", "GeauxWeisbeck4.dev"]
 ---
 
 If you are reading this today, then I'd like to tell you congratulations! You may or may not be the very first person besides me to see this website - but you may also not be the first person. You might be the second, or third, or maybe even the 8th person. Probably not going to be any higher than eight people who have visited this site, and eight is really reaching - probably more like just us two who have visited...

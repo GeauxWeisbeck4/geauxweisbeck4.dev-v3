@@ -2,7 +2,7 @@
 
 Welcome to my personal website and digital garden, [GeauxWesibeck4.dev](https://geauxweisbeck4.dev). This is version 3.0 of my personal website and it is also serving as my first official digital garden - I've had "digital gardens" in the past that didn't really follow the expectation of working in public. 
 
-
+Version 3.0.0 has been released and more is coming on the horizon.
 
 ## Purpose
 
